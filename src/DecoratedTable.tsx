@@ -8,7 +8,13 @@ import ptb4 from './assets/Ptb4.mp4';
 
 // A smarter Polaroid that adapts to image dimensions
 function Polaroid({ position, rotation, url, scale = 1.3 }: { position: [number, number, number], rotation: [number, number, number], url: string, scale?: number }) {
-  const texture = useTexture(url);
+  const texture = useVideoTexture(url, {
+    muted: true,        // Safari WILL NOT autoplay video if it thinks there is sound
+    playsInline: true,  // Forces iOS Safari not to open the video in fullscreen mode
+    crossOrigin: 'Anonymous', // Prevents Safari security blocks on hosted videos
+    loop: true,
+    autoPlay: true
+  });
   texture.colorSpace = THREE.SRGBColorSpace;
 
   // --- 1. Calculate Dimensions based on the loaded image ---
