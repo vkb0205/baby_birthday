@@ -17,7 +17,7 @@ export default function App() {
   }, [entered]);
 
   return (
-    <div className="w-screen h-screen bg-[#0c0812] overflow-hidden relative">
+    <div className="bg-[#0c0812] overflow-hidden" style={{ width: '100vw', height: '100dvh', position: 'fixed', top: 0, left: 0 }}>
       {!entered && (
         <div className="absolute inset-0 z-50 flex flex-col items-center justify-center bg-[#0c0812]">
           <h1 className="text-[#ffb3ff] font-serif text-3xl mb-8 tracking-widest opacity-80">A Gift For You</h1>
