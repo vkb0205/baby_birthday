@@ -49,7 +49,6 @@ export function Scene({ onCardClick }: { onCardClick?: (cardNumber: number) => v
       <EffectComposer>
         <Bloom 
           luminanceThreshold={0.2} 
-          mipmapBlur 
           intensity={1.5} 
           radius={0.4} 
         />
